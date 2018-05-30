@@ -1,5 +1,7 @@
 package i_introduction._4_Lambdas
 
+import com.google.common.base.Predicate
+import com.google.common.collect.Iterables
 import util.TODO
 import util.doc4
 
@@ -22,4 +24,25 @@ fun todoTask4(collection: Collection<Int>): Nothing = TODO(
     documentation = doc4(),
     references = { JavaCode4().task4(collection) })
 
-fun task4(collection: Collection<Int>): Boolean = todoTask4(collection)
+fun task4(collection: Collection<Int>): Boolean {
+//    val isEven: (Collection<Int>) -> Boolean = { c ->
+//        var collection: Collection<Int> = c
+//        var element = collection.first()
+//            while (true) {
+//            if (collection.isEmpty()) {
+//                return false
+//            }
+//            if (element % 2 == 0) {
+//                return true
+//            } else {
+//                element = collection.first()
+//                collection = collection.drop(1)
+//            }
+//        }
+//    }
+    return collection.any { it % 2 == 0 }
+}
+
+//fun task4(collection: Collection<Int>): Boolean {
+//    return Iterables.any(collection) { element -> element!! % 2 == 0 }
+//}
